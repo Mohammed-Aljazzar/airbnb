@@ -3,12 +3,15 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.text import slugify
 from django.urls import reverse
+from django_summernote.fields import SummernoteTextField
+
 # Create your models here.
 class Property(models.Model):
     name = models.CharField(max_length=100, unique=True)
     image = models.ImageField(upload_to='property/')
     price = models.IntegerField(default=0)
-    description = models.TextField(max_length=10000)
+    description = models.TextField(max_length=20000)
+    # description = SummernoteTextField(max_length=10000)
     place = models.ForeignKey('Place', on_delete=models.CASCADE, related_name='property_place')
     category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='property_category')
     created_at = models.DateTimeField(default=timezone.now)

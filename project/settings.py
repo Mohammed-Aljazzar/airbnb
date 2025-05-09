@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'settings', 
     'taggit',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,7 @@ STATICFILES_DIRS = [ BASE_DIR / "static",]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
